@@ -6,6 +6,12 @@ module Riddick
   # All translations cam be changed (see README for further details).
   # To change the templates, subclass Riddick::Server and set change the view path.
   class Server < Sinatra::Base
+
+    set :views, "#{Rails.root}/app/views"
+
+
+
+    
     # I18n load the fallback translations lazy.
     # To correctly display the default translations, we have to ensure they are loaded on startup.
     Riddick::Backends.simple.init_translations
